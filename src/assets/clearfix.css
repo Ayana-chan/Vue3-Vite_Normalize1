@@ -1,0 +1,11 @@
+/* 
+    class包含classfix时，
+    可以做到重叠上边界分离
+    并解决高度塌陷问题
+*/
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
