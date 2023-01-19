@@ -8,6 +8,7 @@ import api from './api';
 
 import 'normalize.css';
 import 'animate.css';
+import 'hover.css';
 
 const app = createApp(App)
 
