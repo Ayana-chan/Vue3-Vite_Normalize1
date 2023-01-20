@@ -4,13 +4,19 @@ const { proxy } = getCurrentInstance();
 const cnt = ref(0);
 
 onMounted(() => {
+  
   proxy.$http
     .httpRequest({
       url: '/mockBasicTest',
       method: 'get',
     })
     .then((res) => {
-      console.log('mockBasicTest');
+      console.log('mockBasicTest_1');
+      console.log(res.data.data);
+    });
+    
+  proxy.$http.baseAxiosTest.getTestStr().then((res) => {
+      console.log('mockBasicTest_2');
       console.log(res.data.data);
     });
 });
