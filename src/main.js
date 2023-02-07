@@ -3,7 +3,6 @@ import App from './App.vue';
 import router from './router';
 import api from './api';
 import stores from './stores';
-import persist from 'pinia-plugin-persistedstate'; //持久化
 
 import 'normalize.css';
 import 'animate.css';
