@@ -11,7 +11,12 @@ export const useCounterStore = defineStore(
     return { count, doubleCount, increment };
   },
   {
-    persist: true, // 开启持久化
+    // 开启持久化
+    persist: {
+      storage: sessionStorage,//默认为localStorage
+      paths: ['count'],//选择持久化条目
+      key:'cnt'//秘钥名
+    },
   }
 );
 
