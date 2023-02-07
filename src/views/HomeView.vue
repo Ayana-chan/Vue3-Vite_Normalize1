@@ -1,10 +1,15 @@
 <script setup>
+import { useCounterStore } from '../stores/counter';
+
 const { proxy } = getCurrentInstance();
 
-const cnt = ref(0);
+const counterStore = useCounterStore();
+// 对store进行响应式的解构赋值
+const { count } = storeToRefs(counterStore);
+// 函数不能使用storeToRefs解构赋值
+const increment = counterStore.increment;
 
 onMounted(() => {
-  
   proxy.$http
     .httpRequest({
       url: '/mockBasicTest',
@@ -14,20 +19,23 @@ onMounted(() => {
       console.log('mockBasicTest_1');
       console.log(res.data.data);
     });
-    
+
   proxy.$http.baseAxiosTest.getTestStr().then((res) => {
-      console.log('mockBasicTest_2');
-      console.log(res.data.data);
-    });
+    console.log('mockBasicTest_2');
+    console.log(res.data.data);
+  });
 });
 </script>
 
 <template>
-  <div>{{ cnt }}</div>
-  <el-button type="primary" size="default" @click="cnt++">Increment</el-button>
+  <div>{{ count }}</div>
+  <el-button type="primary" size="default" @click="increment"
+    >Increment</el-button
+  >
+  <br /><br />
   <div
     class="header animate__animated animate__fadeInDown"
-    v-show="cnt % 2 === 0"
+    v-show="count % 2 === 0"
   >
     Animate.css
   </div>

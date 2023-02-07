@@ -16,7 +16,7 @@ export default defineConfig({
     mockPlugin(true),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      imports: ['vue', 'vue-router'],
+      imports: ['vue', 'vue-router','pinia'],
     }),
     Components({
       resolvers: [ElementPlusResolver()],
