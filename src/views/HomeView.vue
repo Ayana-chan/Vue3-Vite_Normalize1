@@ -1,7 +1,7 @@
 <script setup>
 const { proxy } = getCurrentInstance();
 
-const counterStore = proxy.$stores.useCounterStore();
+const counterStore = useCounterStore();
 // 对store进行响应式的解构赋值
 const { count } = storeToRefs(counterStore);
 // 函数不能使用storeToRefs解构赋值

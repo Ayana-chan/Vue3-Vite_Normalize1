@@ -15,11 +15,11 @@ export default defineConfig({
     vue(),
     mockPlugin(true),
     AutoImport({
+      dirs: ['./src/stores/modules'],
       resolvers: [ElementPlusResolver()],
       imports: ['vue', 'vue-router', 'pinia'],
     }),
     Components({
-      // dts: true,
       dirs: ['src/components'], // 按需加载的文件夹
       resolvers: [ElementPlusResolver()],
     }),
