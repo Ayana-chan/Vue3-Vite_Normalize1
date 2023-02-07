@@ -1,6 +1,7 @@
 import httpRequest from "@/utils/httpRequest";
 
-import baseAxiosTest from "./http/baseAxiosTest";
+//导入各个模块
+import * as baseAxiosTest from "./http/baseAxiosTest";
 
 export default {
   install: (app) => {

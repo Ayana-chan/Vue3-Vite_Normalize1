@@ -6,7 +6,3 @@ export function getTestStr() {
     method: 'get',
   });
 }
-
-export default {
-  getTestStr,
-};
