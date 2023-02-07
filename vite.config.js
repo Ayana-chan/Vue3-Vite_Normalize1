@@ -16,9 +16,11 @@ export default defineConfig({
     mockPlugin(true),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      imports: ['vue', 'vue-router','pinia'],
+      imports: ['vue', 'vue-router', 'pinia'],
     }),
     Components({
+      // dts: true,
+      dirs: ['src/components'], // 按需加载的文件夹
       resolvers: [ElementPlusResolver()],
     }),
   ],

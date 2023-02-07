@@ -1,8 +1,9 @@
 import App from './App.vue';
-import router from './router';
 
+import router from './router';
 import api from './api';
-import pinia from './stores';
+import stores from './stores';
+import persist from 'pinia-plugin-persistedstate'; //持久化
 
 import 'normalize.css';
 import 'animate.css';
@@ -10,6 +11,6 @@ import 'hover.css';
 
 const app = createApp(App);
 
-app.use(pinia).use(router).use(api);
+app.use(stores).use(router).use(api);
 
 app.mount('#app');
