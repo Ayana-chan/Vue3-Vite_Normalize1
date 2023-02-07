@@ -15,7 +15,7 @@ export const useCounterStore = defineStore(
     persist: {
       storage: sessionStorage,//默认为localStorage
       paths: ['count'],//选择持久化条目
-      key:'cnt'//秘钥名
+      key:'cnt'//密钥名
     },
   }
 );
