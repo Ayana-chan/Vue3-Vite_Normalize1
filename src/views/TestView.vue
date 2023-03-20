@@ -1,4 +1,7 @@
 <script setup>
+import SingleUpload from '../components/upload/singleUpload.vue';
+import { policy } from '../components/upload/policy';
+
 const { proxy } = getCurrentInstance();
 
 const counterStore = useCounterStore();
@@ -6,6 +9,8 @@ const counterStore = useCounterStore();
 const { count } = storeToRefs(counterStore);
 // 函数不能使用storeToRefs解构赋值
 const increment = counterStore.increment;
+
+let ossUrl = ref('');
 
 onMounted(() => {
   proxy.$http
@@ -39,4 +44,7 @@ onMounted(() => {
   </div>
   <br />
   <div class="hvr-fade">Hover.css</div>
+  <br />
+  <SingleUpload v-model="ossUrl"></SingleUpload>
+  <p>{{ ossUrl }}</p>
 </template>

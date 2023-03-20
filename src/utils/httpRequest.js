@@ -4,7 +4,8 @@ export default function httpRequest(config){
     
     //创建axios实例
     const axiosInstance=axios.create({
-        baseURL: 'http://127.0.0.1:5173',
+        // baseURL: 'http://127.0.0.1:5173',
+        baseURL: 'http://127.0.0.1:88/api',
         headers:{'Content-Type':'application/json'},
         timeout: 4000,
     })
