@@ -3,7 +3,7 @@ import { MockMethod } from 'vite-plugin-mock';
 
 export default [
   {
-    url: '/mockBasicTest',
+    url: '/api/mockBasicTest',
     method: 'get',
     response: () => {
       return {

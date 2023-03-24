@@ -1,6 +1,5 @@
 <script setup>
 import SingleUpload from '../components/upload/singleUpload.vue';
-import { policy } from '../components/upload/policy';
 
 const { proxy } = getCurrentInstance();
 
